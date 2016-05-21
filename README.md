@@ -10,8 +10,11 @@ https://riverbankcomputing.com/software/pyqt/download
 
 ## 修改config.ini
 - ak as填自己七牛的秘钥
+- 
 ![your text](http://o7bk1ffzo.bkt.clouddn.com/1463817013306)
+
 - bucket填自己的七牛资源的名称
+- 
 - dir填本机缓存图片的目录（要存在这个文件夹）
 
 
@@ -25,6 +28,11 @@ https://riverbankcomputing.com/software/pyqt/download
 ![your text](http://o7bk1ffzo.bkt.clouddn.com/1463833945050)
 
 按ctrl+alt+a就可以截屏（使用qq截屏功能）
+
+
+## 特别注意
+
+建议在不写文章的时候，关闭服务（直接关闭对话框），否则，可能会导致你复制文件操作失效！！
 
 # 本文参考
 [Python如何获取Windows剪贴板内容并判断类型？](https://www.zhihu.com/question/37741420)
