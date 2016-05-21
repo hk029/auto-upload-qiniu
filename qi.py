@@ -1,6 +1,6 @@
 # -*- encoding:utf-8 -*-
 from qiniu import Auth, put_data, put_file
-from time import time
+from time import time,strftime
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 import win32clipboard as w
@@ -43,30 +43,29 @@ def upload_data(data, bucket_name):
     token = q.upload_token(bucket_name, key) 
     #上传文件
     retData, respInfo = put_data(token, key, data)
-  
-    return 'o7bk1ffzo.bkt.clouddn.com/' + key
+    return url + key
 
-def getText():
+def getTextFromClip():
     w.OpenClipboard()
     d = w.GetClipboardData(win32con.CF_TEXT)
     w.CloseClipboard()
     return d
 
-def setText(aString):
+def setTextToClip(aString):
     w.OpenClipboard()
     w.EmptyClipboard()
     w.SetClipboardData(win32con.CF_TEXT, aString)
     w.CloseClipboard()
 
 def on_clipboard_change(): 
+#如果是图片信息,先把剪贴板的图片保存到本地然后上传
     imgpath = get_image()
+#如果是路径信息,则把路径对应的文件上传到七牛
     if imgpath == False:
         data = clipboard.mimeData() 
         if data.hasFormat('text/uri-list'): 
             for path in data.urls(): 
                 upload2qiniu(path.toString()[8:])
-        if data.hasText(): 
-            print data.text() 
     else:
         upload2qiniu(imgpath)
 
@@ -74,7 +73,8 @@ def upload2qiniu(imgpath):
     with open(imgpath , 'rb') as f:
         url = upload_data(f.read(), 'mypic')
         text = '![your text](http://%s)' % url
-        setText(text)
+        setTextToClip(text)
+        print strftime('%H:%M:%S : ')+text
 
 
 if __name__ == '__main__':
