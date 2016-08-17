@@ -3,6 +3,7 @@
 	pip install qiniu
 ## 安装PIL
 64位的直接安装（链接: http://pan.baidu.com/s/1nvD7Rbr 密码: ey8s）
+
 32位的需要在网站下载：http://www.pythonware.com/products/pil/
 
 ## 安装pyqt4
