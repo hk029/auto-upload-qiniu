@@ -2,11 +2,16 @@
 ## 安装qiniu
 	pip install qiniu
 ## 安装PIL
-64位的直接安装
+64位的直接安装（链接: http://pan.baidu.com/s/1nvD7Rbr 密码: ey8s）
 32位的需要在网站下载：http://www.pythonware.com/products/pil/
 
 ## 安装pyqt4
 https://riverbankcomputing.com/software/pyqt/download
+
+## 安装pywin32
+https://sourceforge.net/projects/pywin32/files/?source=navbar
+
+根据你自己系统和python的版本选择
 
 ## 修改config.ini
 - ak sk填自己七牛的秘钥
@@ -21,7 +26,9 @@ https://riverbankcomputing.com/software/pyqt/download
 
 ![your text](http://o7bk1ffzo.bkt.clouddn.com/1463835143145)
 
-- dir填本机缓存图片的目录（要存在这个文件夹）
+注意：最后要加上一个斜杠'/'
+
+- dir填本机缓存图片的目录（要存在这个文件夹,如果没有要新建一个）
 
 ![your text](http://o7bk1ffzo.bkt.clouddn.com/1463834858628)
 
